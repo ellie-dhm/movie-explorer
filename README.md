@@ -8,7 +8,7 @@ A responsive movie browser built with React and TypeScript. It fetches live data
 
 ---
 
-## ✨ Features
+## Features
 
 - **Live data** from the TMDB API (popular movies by default)
 - **Search** by title, with a 400 ms debounce so the API isn't called on every keystroke
@@ -20,7 +20,7 @@ A responsive movie browser built with React and TypeScript. It fetches live data
 - **Responsive layout** with a sticky header, from phones to large screens
 - **Accessible details**: labelled search input, `aria-live` results region, `role="alert"` on errors, and reduced-motion support for animations
 
-## 🛠️ Tech stack
+## Tech stack
 
 - [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vite.dev/)
@@ -28,7 +28,7 @@ A responsive movie browser built with React and TypeScript. It fetches live data
 - [TMDB API](https://developer.themoviedb.org/docs)
 - Deployed on GitHub Pages with GitHub Actions
 
-## 🚀 Getting started
+## Getting started
 
 ### Prerequisites
 
@@ -71,7 +71,7 @@ npm run dev
 
 Then open the URL shown in your terminal.
 
-## 📜 Available scripts
+## Available scripts
 
 | Command           | Description                              |
 | ----------------- | ---------------------------------------- |
@@ -79,7 +79,7 @@ Then open the URL shown in your terminal.
 | `npm run build`   | Type-check and create a production build |
 | `npm run preview` | Preview the production build locally     |
 
-## 📁 Project structure
+## Project structure
 
 ```
 src/
@@ -103,7 +103,7 @@ src/
 └── main.tsx
 ```
 
-## 🧠 How it works
+## How it works
 
 - **`useMovies(query)`** is a custom hook that owns the async logic. It returns `{ movies, loading, error, retry }` and fetches popular movies when the query is empty, or search results otherwise.
 - **`useDebounce`** waits until the user stops typing before the query changes, which avoids a request per keystroke.
@@ -111,7 +111,7 @@ src/
 - **`fetch` doesn't throw on HTTP errors** (like 401 or 500), so the API layer checks `res.ok` and throws manually, so that failed requests reach the error state instead of silently looking like "no data".
 - The UI renders exactly one of four mutually exclusive states: **loading**, **error**, **empty**, or **results**.
 
-## 🌐 Deployment
+## Deployment
 
 The site is deployed to GitHub Pages by a GitHub Actions workflow (`.github/workflows/deploy.yml`) on every push to `main`.
 
@@ -121,11 +121,11 @@ If you fork this project:
 2. Add your TMDB key as a repository secret named `VITE_TMDB_KEY` (**Settings → Secrets and variables → Actions**).
 3. Set **Settings → Pages → Source** to **GitHub Actions**.
 
-## 🔐 A note on the API key
+## A note on the API key
 
 This is a frontend-only app, so the TMDB key is bundled into the built JavaScript and is visible in the browser's network tab. That's expected for TMDB's free, revocable keys, but it means this approach isn't suitable for secrets that must stay private. For those, you'd proxy requests through a small backend. The `.env` file is git-ignored, so the key is never committed to the repository.
 
-## 🔮 Possible improvements
+## Possible improvements
 
 - Pagination or a "Load more" button (the API returns `total_pages`)
 - Genre filter using TMDB's `/discover/movie` endpoint
@@ -133,7 +133,7 @@ This is a frontend-only app, so the TMDB key is bundled into the built JavaScrip
 - Caching results to avoid refetching repeated searches
 - Unit tests for the hooks
 
-## 📄 Attribution
+## Attribution
 
 This product uses the TMDB API but is not endorsed or certified by TMDB.
 
