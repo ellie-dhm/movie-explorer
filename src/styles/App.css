@@ -1,0 +1,9 @@
+.app {
+  padding: 2rem 0 4rem;
+}
+
+.app__heading {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}

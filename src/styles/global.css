@@ -1,0 +1,48 @@
+:root {
+  --bg: #0e1116;
+  --surface: #171b22;
+  --border: #262c36;
+  --text: #e8eaed;
+  --muted: #9aa3af;
+  --accent: #f5c518;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.container {
+  width: min(1100px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+/* Shared by the real grid and the skeleton grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.25rem;
+}
